@@ -1,0 +1,7 @@
+# Public examples contain descriptive placeholders only. Never allowlist real credentials.
+[allowlist]
+  description = "Descriptive Wi-Fi placeholders and documentation references"
+  regexes = [
+    '''replace_with_[a-z0-9_]+''',
+    '''BABY_MONITOR_WIFI_(SSID|PASSWORD)''',
+  ]

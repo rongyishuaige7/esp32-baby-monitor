@@ -1,0 +1,33 @@
+# Local credentials
+src/wifi_credentials.h
+
+# PlatformIO / embedded build outputs
+.pio/
+.pioenvs/
+.piolibdeps/
+*.bin
+*.elf
+*.map
+
+# IDE and operating-system state
+.vscode/
+.idea/
+.vs/
+*.code-workspace
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+
+# Local archives, captures and deployment leftovers
+*.zip
+*.tar
+*.tar.gz
+*.log
+*.pcap
+*.apk
+*.aab
+*.mp4
+*.mov
+*.avi
+*.mkv
