@@ -4,7 +4,6 @@
 
 [![Validate](https://github.com/rongyishuaige7/esp32-baby-monitor/actions/workflows/validate.yml/badge.svg)](https://github.com/rongyishuaige7/esp32-baby-monitor/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-f97316.svg)](LICENSE)
-[![Hardware retest](https://img.shields.io/badge/hardware-not%20retested-6e7781.svg)](docs/PROJECT_STATUS.md)
 
 > [!CAUTION]
 > 这是本科嵌入式学习原型，不是婴儿安全监护、睡眠安全、哭声识别、姿态识别、医疗、生命体征、紧急告警或无人值守看护设备。距离组合、声音幅度、温湿度、LED、蜂鸣器、串口和 HTTP 响应都**不能**证明婴儿姿态、状态、安全、风险、告警送达或有人正在看护。不得将它用于婴儿看护、医疗、睡眠安全、紧急响应或任何生命安全场景。
