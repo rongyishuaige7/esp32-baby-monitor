@@ -15,19 +15,6 @@
 
 ![ESP32 监测原型，2026-04-08](assets/photos/historical-prototype-overview.jpg)
 
-
-
-## 当前证据
-
-```text
-桌面原工程的当前工作区版本已裁决为公开候选来源；Git HEAD 仅作差异基线
-公开候选不含 Wi-Fi 凭据、构建产物、IDE 状态、Android App、照片、视频、EDA、PCB 或制造文件
-本机公开门禁、硬件无关源码契约和 ESP32 PlatformIO 干净构建已验证；GitHub Actions 工作流已配置
-当前 ESP32、双 HC-SR04、DHT11、声音模块、RGB LED、蜂鸣器、按钮、Wi-Fi 与局域网 HTTP 尚未按当前公开 commit 重新真机复测
-```
-
-固定成功构建与默认分支当前 HEAD 的对应关系，以 [Hardware Lab 索引](https://github.com/rongyishuaige7/hardware-lab)的记录为准。构建产物、CI 成功或本地 API 返回均不代表真实传感器、真实婴儿状态、设备在线或安全效果。完整范围见[项目状态](docs/PROJECT_STATUS.md)和[验证说明](docs/VERIFICATION.md)。
-
 ## 系统范围
 
 ```text
@@ -121,12 +108,6 @@ bash scripts/verify.sh
 - 仓库不包含真实 Wi-Fi 凭据、`.pio/` 构建输出、固件二进制、IDE 状态、Android App 源码、实物照片、视频、EDA、PCB、Gerber、制造文件或真机日志。
 
 详细差异和公开边界见[来源说明](docs/SOURCE_PROVENANCE.md)。缺少照片、视频或 App 源码不阻断当前源码开源，但不能被包装成已公开或可复现的能力。
-
-## 验证与真机复测
-
-当前 CI 验证公开文件边界、源码静态契约和固定 PlatformIO 配置下的 ESP32 固件构建。它不验证真实 ESP32、供电、传感器电平、距离分类、温湿度、声音输入、LED、蜂鸣器、按钮、Wi-Fi、HTTP、Android App 或任何婴儿相关结论。
-
-将状态升级为“当前真机已复测”前，必须按[真机复测清单](docs/VERIFICATION.md)记录日期、精确 Git commit、ESP32 板型、每个模块、供电、电平/分压、接线、每项通过/失败和脱敏证据；复测也不能把本项目升级成安全或医疗设备。
 
 ## 开源许可与第三方组件
 
