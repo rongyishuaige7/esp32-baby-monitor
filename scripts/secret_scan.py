@@ -5,6 +5,8 @@ from __future__ import annotations
 from pathlib import Path
 import re
 
+from PIL import Image
+
 ROOT = Path(__file__).resolve().parents[1]
 FORBIDDEN_PARTS = {".pio", ".idea", ".vscode", ".vs", "__pycache__"}
 FORBIDDEN_NAMES = {"wifi_credentials.h", ".env", ".env.local"}
@@ -21,6 +23,9 @@ FORBIDDEN_MARKETING = (
     "哭声报警",
     "趴睡判定",
 )
+PUBLIC_MEDIA_DIRS = {"assets", "hardware"}
+PUBLIC_IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png"}
+PUBLIC_PDF_SUFFIXES = {".pdf"}
 
 
 def fail(message: str) -> None:
@@ -39,6 +44,27 @@ def main() -> None:
             fail(f"forbidden local or binary file is tracked: {rel}")
         if path.stat().st_size > 2 * 1024 * 1024:
             fail(f"file exceeds 2 MiB publication limit: {rel}")
+        suffix = path.suffix.lower()
+        is_reviewed_media = rel.startswith("assets/") or rel.startswith("hardware/eda/")
+        if is_reviewed_media and suffix in PUBLIC_IMAGE_SUFFIXES:
+            try:
+                with Image.open(path) as image:
+                    image.verify()
+                with Image.open(path) as image:
+                    if len(image.getexif()) != 0:
+                        fail(f"public image contains EXIF metadata: {rel}")
+                    allowed_info = {"jfif", "jfif_version", "jfif_unit", "jfif_density", "progressive", "progression", "transparency"}
+                    if set(image.info) - allowed_info:
+                        fail(f"public image contains unexpected metadata: {rel}")
+            except OSError as exc:
+                fail(f"invalid public image {rel}: {exc}")
+            checked += 1
+            continue
+        if is_reviewed_media and suffix in PUBLIC_PDF_SUFFIXES:
+            if not path.read_bytes().startswith(b"%PDF-"):
+                fail(f"invalid public PDF: {rel}")
+            checked += 1
+            continue
         try:
             text = path.read_text(encoding="utf-8")
         except UnicodeDecodeError:

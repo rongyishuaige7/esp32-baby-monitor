@@ -29,7 +29,7 @@ jobs:
           python-version: "3.12"
 
       - name: Set up PlatformIO Core
-        run: python3 -m pip install --disable-pip-version-check platformio==6.1.19
+        run: python3 -m pip install --disable-pip-version-check platformio==6.1.19 Pillow==12.1.1
 
       - name: Run publication and source-contract gates
         run: |
