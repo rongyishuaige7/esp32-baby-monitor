@@ -16,8 +16,8 @@
 - `reference`、`attention`、`high_threshold` 和 `unknown` 只表示代码的本地演示级分类，不表示正常、危险、告警、健康、安全、有人已知晓或已采取行动。
 - 本项目不是婴儿监护、医疗、睡眠安全、紧急告警、生命安全或无人值守看护系统。
 
-## Historical media and EDA added on 2026-07-18
+## 2026-07-18 新增的历史素材与 EDA
 
-sanitized historical photo(s), historical EDA derivative(s). See [MEDIA_EVIDENCE](MEDIA_EVIDENCE.md) for dates, sanitization, omissions, and evidence limits.
+已脱敏的历史照片和历史 EDA 衍生文件。日期、脱敏处理、未公开材料和证据边界见 [MEDIA_EVIDENCE](MEDIA_EVIDENCE.md)。
 
-This publication update adds historical evidence only. Current hardware re-test not run.
+本次发布仅新增历史证据。当前未进行真机复测。
