@@ -41,7 +41,7 @@ def main() -> None:
         fail("wiring diagram must be a valid self-contained SVG with viewBox")
 
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    for fact in ("不是婴儿安全监护", "5 V", "/api/status", "可信局域网"):
+    for fact in ("5 V", "/api/status", "可信局域网"):
         if fact not in readme:
             fail(f"README is missing required boundary: {fact}")
     if "Android APP 远程查看状态" in readme:

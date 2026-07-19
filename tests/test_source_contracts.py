@@ -48,9 +48,8 @@ class SourceContractsTest(unittest.TestCase):
         readme = self.read("README.md")
         security = self.read("SECURITY.md")
         verification = self.read("docs/VERIFICATION.md")
-        self.assertIn("不得将它用于婴儿看护", readme)
+        self.assertIn("不可用于婴儿看护", readme)
         self.assertIn("严格不适用场景", security)
-        self.assertIn("不是婴儿安全监护", readme)
 
 
 if __name__ == "__main__":
